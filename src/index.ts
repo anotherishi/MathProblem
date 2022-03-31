@@ -38,7 +38,7 @@ async function handler(req: Request): Promise<Response> {
             },
         });
     }
-    return new Response(body, {
+    return new Response(await Deno.readFile("./index.html"), {
         status: 200,
         headers: {
             "content-type": "text/html; charset=utf-8",
